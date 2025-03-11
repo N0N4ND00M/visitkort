@@ -1,78 +1,107 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visitkort</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-        }
-        .card {
-            width: 350px;
-            height: 200px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 5px 5px 15px rgba(217, 42, 42, 0.2);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .card::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: -50px;
-            width: 150px;
-            height: 150px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-        }
-        .card::after {
-            content: '';
-            position: absolute;
-            bottom: -50px;
-            right: -50px;
-            width: 150px;
-            height: 150px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-        }
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        .name {
-            font-size: 18px;
-            font-weight: bold;
-        }
-        .contact {
-            font-size: 14px;
-            color: #777;
-            margin-top: 5px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Designat Visitkort</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      /* Snygg gradientbakgrund för hela sidan */
+      background: linear-gradient(135deg, #0f0f10, #640505);
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .card {
+      position: relative;
+      width: 420px;
+      height: 260px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      /* Använder din nedladdade bild som bakgrund */
+      background: url('michael-pointner-EAKnJiaJyPM-unsplash.jpg') no-repeat center/cover;
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+    /* Mörk overlay för bättre kontrast och läsbarhet */
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+    .card-content {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60%;
+      height: 100%;
+      padding: 20px;
+      z-index: 2;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    }
+    .logo {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+    .name {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .contact {
+      font-size: 14px;
+      margin-bottom: 6px;
+      opacity: 0.9;
+    }
+    /* Stil för QR-koden */
+    .qr {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 70px;
+      height: 70px;
+      background: rgba(255,255,255,0.9);
+      border: 2px solid rgba(255,255,255,0.7);
+      border-radius: 8px;
+      overflow: hidden;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .qr img {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
 <body>
-    <div class="card">
-        <div class="logo">JH Hantverk</div>
-        <div class="name">Karl Andersson</div>
-        <div class="contact">karl.andresson@spc.com</div>
-        <div class="contact">+46 70 123 45 67</div>
+  <div class="card">
+    <div class="card-content">
+      <div class="logo">C0sm1c V1b3</div>
+      <div class="name">Karl Andersson</div>
+      <div class="contact">karl.andersson@spc.com</div>
+      <div class="contact">+46 70 123 45 67</div>
     </div>
+    <div class="qr">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://n0n4nd00m.github.io/flameclickerad/&amp;size=70x70" alt="QR Code">
+    </div>
+  </div>
 </body>
 </html>
-
-
-
